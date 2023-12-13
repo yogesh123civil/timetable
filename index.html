@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Management Tool</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .time-slot {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .time-slot button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .time-slot input {
+            display: none;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .time-slot button.yes {
+            background-color: #2ecc71;
+        }
+
+        .time-slot button.no {
+            background-color: #e74c3c;
+        }
+
+        .reason-input {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .reason-input input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .reason-input button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .reason-input button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Choose a Time Slot</h2>
+
+    <div class="time-slot" id="timeSlot1">
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+        <input class="reason" type="text" placeholder="Enter reason">
+    </div>
+
+    <div class="time-slot" id="timeSlot2">
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+        <input class="reason" type="text" placeholder="Enter reason">
+    </div>
+
+    <div class="time-slot" id="timeSlot3">
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+        <input class="reason" type="text" placeholder="Enter reason">
+    </div>
+
+    <div class="time-slot" id="timeSlot4">
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+        <input class="reason" type="text" placeholder="Enter reason">
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const timeSlots = document.querySelectorAll(".time-slot");
+
+        timeSlots.forEach(function (slot) {
+            const yesButton = slot.querySelector(".yes");
+            const noButton = slot.querySelector(".no");
+            const reasonInput = slot.querySelector(".reason");
+
+            yesButton.addEventListener("click", function () {
+                slot.style.backgroundColor = "#2ecc71";
+            });
+
+            noButton.addEventListener("click", function () {
+                reasonInput.style.display = "block";
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
